@@ -1,0 +1,582 @@
+/* General Styles */
+:root {
+    --kepler-green: #e3e7e4;
+    --dark-bg: #121212;
+    --light-gray: #f4f4f4;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--white);
+    color: #333;
+}
+
+/* Navigation */
+nav {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--kepler-green);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--kepler-green);
+}
+
+/* Sections */
+.container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: var(--dark-bg);
+    border-left: 5px solid var(--kepler-green);
+    padding-left: 15px;
+}
+
+.hero {
+    /* 1. Use the image with a darker overlay so white text stays readable */
+    background: linear-gradient(rgba(14, 75, 2, 0.4), rgba(4, 68, 19, 0.4)), url('Background.jpeg');
+
+    /* 2. THE KEY CHANGE: Center the image horizontally but focus on the BOTTOM */
+    background-size: cover;
+    background-position: center 80%; /* 80% tells the browser to show the bottom part */
+    background-repeat: no-repeat;
+
+    /* 3. Give it more height so the people have room to show up */
+    height: 90vh; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    /* Change color to white so it stands out against the green jerseys */
+    color: #ffffff; 
+    
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    text-transform: uppercase;
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 3px;
+    
+    /* This shadow creates a 'glow' around the letters so they never get lost */
+    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9), 0px 2px 5px rgba(0, 0, 0, 1);
+    
+    margin-bottom: 15px;
+    border: none; /* Removes the green line if it's still there */
+}
+
+.hero p {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    
+    /* Helps the small text be readable against the sky/trees */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    
+    max-width: 800px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: var(--kepler-green);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--dark-bg);
+    color: white;
+    margin-top: 2rem;
+}
+/* Footer Styles */
+footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+    border-top: 4px solid var(--kepler-green);
+}
+
+.footer-content h3 {
+    color: var(--kepler-green);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--kepler-green);
+    border-color: var(--kepler-green);
+}
+/* Social Media Icon Styling */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem; /* Size of the icon */
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes them circular */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+/* Hover Effects */
+.social-links a:hover {
+    color: var(--white);
+    transform: translateY(-5px); /* Gentle float up */
+}
+
+/* Specific Brand Colors on Hover */
+.social-links a[aria-label="Instagram"]:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-color: transparent;
+}
+
+.social-links a[aria-label="YouTube"]:hover {
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+.social-links a[aria-label="LinkedIn"]:hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
+}
+/* Achievement Section Styling */
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* This keeps the players' faces in frame */
+    border-bottom: 4px solid var(--kepler-green);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--kepler-green);
+    letter-spacing: 1px;
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+    border: none;
+    padding: 0;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+/* Ensure the best parts of the photos are visible */
+.card-image img {
+    width: 100%;
+    height: 250px; /* Increased height to show more of the photo */
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Specific adjustment for the Liberation Cup Banner photo */
+/* This ensures the 'LIBERATION CUP 25' text and the players faces are seen */
+.stat-card:nth-child(2) .card-image img {
+    object-position: center 20%; /* Shifts the view up to show the banner and heads */
+}
+
+/* Specific adjustment for the CAVB Screenshot */
+/* This ensures the score and official result are centered */
+.stat-card:nth-child(1) .card-image img {
+    object-position: center center;
+}
+
+/* Hover Effect: Gentle zoom into the action */
+.stat-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+/* Container for the image to prevent the zoom from spilling out */
+.card-image {
+    overflow: hidden;
+    background-color: #000; /* Black background behind image if it loads slowly */
+}
+/* Profile Section Styles */
+.profile-section {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.profile-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 8px solid var(--kepler-green);
+}
+
+.profile-image img {
+    width: 280px; /* Adjust size as needed */
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 10px 10px 0px var(--kepler-green); /* Professional sports-style shadow */
+}
+
+.profile-text h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: var(--dark-bg);
+}
+
+.profile-text p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Responsive: Stack photo on top of text on mobile */
+@media (max-width: 768px) {
+    .profile-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+}
+/* Fix for vertical (portrait) video on the About page */
+.video-container video {
+    background-color: #000; /* Adds black bars to the sides of your vertical video */
+    object-fit: contain;    /* Ensures the whole phone-style video is visible */
+}
+
+.media-card p {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+}
+/* Contact Page Layout */
+.contact-grid {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    align-items: flex-start;
+}
+
+.contact-form-wrapper, .map-wrapper {
+    flex: 1;
+    background: #013a08;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(249, 248, 248, 0.05);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--kepler-green);
+}
+
+.btn-submit {
+    background: var(--kepler-green);
+    color: rgb(18, 17, 17);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background: var(--dark-yellow);
+}
+
+/* Map Styling */
+.map-container {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+}
+
+.map-wrapper h3 {
+    margin-top: 0;
+}
+
+/* Mobile View */
+@media (max-width: 850px) {
+    .contact-grid {
+        flex-direction: column;
+    }
+    .contact-form-wrapper, .map-wrapper {
+        width: 100%;
+    }
+}
+/* Header Styling */
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-header h1 {
+    font-size: 3rem;
+    color: var(--dark-bg);
+    border: none;
+}
+
+/* The Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Map gets more space */
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Info Card (The Words) */
+.info-card {
+    background: var(--dark-bg); /* Dark background makes white text pop */
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--kepler-green); /* Green icons for visibility */
+    margin-top: 5px;
+}
+
+.info-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--kepler-green);
+}
+
+.info-item p {
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Map Card */
+.map-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    height: 450px;
+}
+
+.map-container {
+    height: 100%;
+    width: 100%;
+}
+
+/* Mobile Fix */
+@media (max-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .map-card {
+        height: 300px;
+    }
+}
+/* Locate this block in your CSS */
+.video-container video {
+    background-color: #000; 
+    object-fit: contain;    
+    
+    /* ADD ONE OF THESE LINES TO DECREASE SIZE: */
+    max-width: 400px;       /* This limits the width to 400 pixels */
+    display: block;         /* Required to make 'margin: auto' work */
+    margin: 0 auto;         /* This keeps the smaller video centered */
+}
+.hero {
+    /* ... other styles ... */
+    height: 60vh; /* Change 90vh to 60vh or 50vh to make it shorter */
+}
+/* This controls the container for the video */
+.video-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: #000; /* Keeps a clean black background for portrait videos */
+    border-radius: 8px 8px 0 0; /* Rounds the top corners to match the card */
+}
+
+/* This makes the video itself responsive */
+.video-wrapper video {
+    width: 100%;      /* Makes video fill the width of the card */
+    display: block;
+    max-height: 450px; /* Prevents portrait videos from becoming way too tall */
+    object-fit: cover; /* Optional: Change to 'contain' if you don't want to crop any edges */
+}
+
+/* Ensure your grid allows for enough space */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.video-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Keeps video from spilling out of rounded corners */
+}
